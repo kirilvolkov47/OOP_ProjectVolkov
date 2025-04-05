@@ -1,7 +1,6 @@
-﻿namespace OOP_Project
+﻿using OOP_Project;
+
+public interface INotificationService
 {
-    public interface INotificationService
-    {
-        void SendNotification(string message, User recipient);
-    }
+    void SendNotification(string message, User recipient);
 }

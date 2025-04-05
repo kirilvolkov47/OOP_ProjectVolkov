@@ -27,10 +27,13 @@ namespace OOP_Project_Tests
         public void SignIn_ValidCredentials_ReturnsTrue()
         {
             var user = new Driver();
-            user.SignUp("my@example.com", "Anton", "Pavlenko", "password12");
-            bool result = user.SignIn("my@example.com", "password12");
-            Assert.IsTrue(result);
+            bool signUpResult = user.SignUp("my@example.com", "Anton", "Pavlenko", "password12");
+            Assert.IsTrue(signUpResult, "SignUp failed.");
+
+            bool signInResult = user.SignIn("my@example.com", "password12");
+            Assert.IsTrue(signInResult, "SignIn failed.");
         }
+
 
         [TestMethod]
         public void SignIn_InvalidCredentials_ReturnsFalse()

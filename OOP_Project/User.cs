@@ -1,4 +1,7 @@
-﻿namespace OOP_Project
+﻿using System;
+using System.Text.RegularExpressions;
+
+namespace OOP_Project
 {
     public abstract class User
     {
@@ -10,19 +13,35 @@
         public string Password { get; set; }
         public bool IsSignedIn { get; set; }
 
+        private static List<string> registeredEmails = new();
+
         public virtual bool SignUp(string email, string name, string surname, string password)
         {
-            throw new NotImplementedException();
+            if (!email.Contains("@") || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surname) || string.IsNullOrWhiteSpace(password))
+                return false;
+
+            Email = email;
+            Name = name;
+            Surname = surname;
+            Password = password;
+            return true;
         }
+
+
 
         public virtual bool SignIn(string email, string password)
         {
-            throw new NotImplementedException();
+            if (string.Equals(Email, email, StringComparison.OrdinalIgnoreCase) && Password == password)
+            {
+                IsSignedIn = true;
+                return true;
+            }
+            return false;
         }
 
         public virtual void SignOut()
         {
-            throw new NotImplementedException();
+            IsSignedIn = false;
         }
     }
 }

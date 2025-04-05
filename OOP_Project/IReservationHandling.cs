@@ -1,8 +1,6 @@
-﻿namespace OOP_Project
+﻿using OOP_Project;
+public interface IReservationHandling
 {
-    public interface IReservationHandling
-    {
-        bool ApproveRequest(int reservationId);
-        bool DeclineRequest(int reservationId);
-    }
+    bool ApproveRequest(int reservationId);
+    bool DeclineRequest(int reservationId);
 }

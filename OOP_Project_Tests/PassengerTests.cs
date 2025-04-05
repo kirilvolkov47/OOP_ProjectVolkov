@@ -18,11 +18,16 @@ namespace OOP_Project_Tests
         [TestMethod]
         public void ReservePlace_ValidTrip_ReturnsTrue()
         {
-            var passenger = new Passenger();
-            var trip = new Trip();
+            var passenger = new Passenger { Name = "Anton Pavlenko" };
+            var trip = new Trip { Id = 1, Departure = "City A", Destination = "City B", SeatsAvailable = 3 };
+
             bool result = passenger.ReservePlace(trip);
+
             Assert.IsTrue(result);
+            Assert.AreEqual(2, trip.SeatsAvailable);
+            Assert.AreEqual(1, passenger.Reservations.Count);
         }
+
 
         [TestMethod]
         public void ViewDriverProfile_ValidDriver_ReturnsProfile()
@@ -37,9 +42,13 @@ namespace OOP_Project_Tests
         public void AddReview_ValidData_ReturnsTrue()
         {
             var passenger = new Passenger();
-            var trip = new Trip();
+            var driver = new Driver();
+            var trip = new Trip { Driver = driver };
+
             bool result = passenger.AddReview(trip, 5, "Amazing trip!!!");
+
             Assert.IsTrue(result);
         }
+
     }
 }
