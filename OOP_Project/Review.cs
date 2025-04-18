@@ -6,9 +6,11 @@
         public int Rating { get; set; }
         public string Comment { get; set; }
 
-        public Review()
+        public Review(Passenger author, int rating, string comment)
         {
-            throw new NotImplementedException();
+            Author = author;
+            Rating = rating;
+            Comment = comment;
         }
     }
 }
