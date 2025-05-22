@@ -28,18 +28,23 @@
 - NuGet: `BCrypt.Net`, `Newtonsoft.Json`
 
 ### Кроки
-1. Клонувати:
-   git clone https://github.com/kirilvolkov47/OOP_ProjectVolkov.git
+1. Клонувати:  
+```bash
+git clone https://github.com/kirilvolkov47/OOP_ProjectVolkov.git
+```
 2. Відкрити OOP_ProjectVolkov.sln у Visual Studio.
-3. Встановити пакети:
-Install-Package BCrypt.Net
+3. Встановити пакети:  
+```bash
+Install-Package BCrypt.Net  
 Install-Package Newtonsoft.Json
+```
 4. Запустити: F5
+
 
 Демо: 
 ![Реєстрація](docs/images/RegisterPage.png)
 ![Результати пошуку](docs/images/SearchResultsPage.png)
 
 ## Контакти
-Кіріл Волков, ХАІ, 623П.
+Кіріл Волков, ХАІ, 623П.  
 Email: linknameonly@gmail.com, k.r.volkov@student.khai.edu
